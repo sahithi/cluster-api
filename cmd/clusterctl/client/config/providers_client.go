@@ -51,6 +51,7 @@ const (
 	OpenStackProviderName  = "openstack"
 	PacketProviderName     = "packet"
 	SideroProviderName     = "sidero"
+	VCloudDirectorName     = "vcd"
 	VSphereProviderName    = "vsphere"
 	MAASProviderName       = "maas"
 	KubevirtProviderName   = "kubevirt"
@@ -176,6 +177,11 @@ func (p *providersClient) defaults() []Provider {
 		&provider{
 			name:         SideroProviderName,
 			url:          "https://github.com/siderolabs/sidero/releases/latest/infrastructure-components.yaml",
+			providerType: clusterctlv1.InfrastructureProviderType,
+		},
+		&provider{
+			name:         VCloudDirectorName,
+			url:          "https://github.com/vmware/cluster-api-provider-cloud-director/releases/latest/infrastructure-components.yaml",
 			providerType: clusterctlv1.InfrastructureProviderType,
 		},
 		&provider{
